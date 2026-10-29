@@ -22,4 +22,9 @@ function buildCheckinCard(checkin, showDeleteButton) {
     p.textContent = checkin.note;
     li.append(p);
   }
+
+  li.addEventListener("mouseenter", () => li.classList.add("hover"));
+  li.addEventListener("mouseleave", () => li.classList.remove("hover"));
 }
+
+
