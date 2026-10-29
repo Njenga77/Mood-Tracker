@@ -39,5 +39,9 @@ function buildCheckinCard(checkin, showDeleteButton) {
   return li;
 }
 
-
+function buildEmptyMessage() {
+  const li = document.createElement("li");
+  li.textContent = "No check-ins yet. Whenever you feel ready, add your first reflection on the Add check-in page.";
+  return li;
+}
 
