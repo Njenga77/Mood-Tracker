@@ -52,4 +52,13 @@ function showHomeSummary() {
 
   const totalSleep = list.reduce((sum, checkin) => sum + checkin.sleep, 0);
   const avgComfort = list.length ? (list.reduce((sum, checkin) => sum + checkin.comfort, 0) / list.length).toFixed(1) : "0";
+  
+  [["Check-ins", list.length], ["Hours slept", totalSleep], ["Average peace", avgComfort]]
+    .forEach(([label, value]) => {
+      const box = document.createElement("div");
+      const num = document.createElement("b");
+      num.textContent = value;
+      box.append(num, label);
+      stats.append(box);
+    });
 }
