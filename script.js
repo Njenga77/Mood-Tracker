@@ -78,8 +78,14 @@ function setupCheckinForm() {
     const date = form.elements.date.value;
     const sleep = Number(form.elements.sleep.value);
     const comfort = Number(form.elements.comfort.value);
+
+  
+    const errors = [];
+    if (!mood) errors.push("Choose how you are feeling.");
+    if (!date || date > today) errors.push("Choose today or an earlier date.");
+    if (!Number.isInteger(sleep) || sleep < 1 || sleep > 24) errors.push("Hours of sleep must be a whole number from 1 to 24.");
+    if (!comfort) errors.push("Choose a peace of mind level.");
   }
 }
-    
     
 
