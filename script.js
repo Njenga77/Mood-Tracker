@@ -52,7 +52,7 @@ function showHomeSummary() {
 
   const totalSleep = list.reduce((sum, checkin) => sum + checkin.sleep, 0);
   const avgComfort = list.length ? (list.reduce((sum, checkin) => sum + checkin.comfort, 0) / list.length).toFixed(1) : "0";
-  
+
   [["Check-ins", list.length], ["Hours slept", totalSleep], ["Average peace", avgComfort]]
     .forEach(([label, value]) => {
       const box = document.createElement("div");
@@ -64,3 +64,14 @@ function showHomeSummary() {
   if (list.length === 0) recent.append(buildEmptyMessage());
   list.slice(-3).reverse().forEach(checkin => recent.append(buildCheckinCard(checkin, false)));
 }
+
+function setupCheckinForm() {
+  const form = document.getElementById("checkin-form");
+  const msg = document.getElementById("message");
+  const today = new Date().toISOString().split("T")[0];
+  form.elements.date.value = today;
+}
+  
+    
+    
+
