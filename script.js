@@ -91,4 +91,13 @@ function setupCheckinForm() {
       msg.textContent = errors.join(" ");
       return; 
     }
-
+    
+    const list = loadCheckins();
+    list.push({ id: Date.now(), mood, date, sleep, comfort, note: form.elements.note.value.trim() });
+    saveCheckins(list);
+    form.reset();
+    form.elements.date.value = today;
+    msg.className = "success";
+    msg.textContent = "Check-in saved gently. Thank you for taking time for yourself — see it on the History page.";
+  });
+}
