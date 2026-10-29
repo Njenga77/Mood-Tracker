@@ -5,7 +5,7 @@ function loadCheckins () {
     catch {return []; }
 }
 
-function saveCheckins (checkins) {
+function saveCheckins (list) {
     localStorage.setItem(KEY, JSON.stringify(list)); 
 }
 
