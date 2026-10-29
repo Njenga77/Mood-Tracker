@@ -50,4 +50,6 @@ function showHomeSummary() {
   const stats = document.getElementById("stats");
   const recent = document.getElementById("recent");
 
-  
+  const totalSleep = list.reduce((sum, checkin) => sum + checkin.sleep, 0);
+  const avgComfort = list.length ? (list.reduce((sum, checkin) => sum + checkin.comfort, 0) / list.length).toFixed(1) : "0";
+}
