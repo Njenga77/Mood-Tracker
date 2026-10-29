@@ -25,6 +25,19 @@ function buildCheckinCard(checkin, showDeleteButton) {
 
   li.addEventListener("mouseenter", () => li.classList.add("hover"));
   li.addEventListener("mouseleave", () => li.classList.remove("hover"));
+
+  if (showDeleteButton) {
+    const btn = document.createElement("button");
+    btn.textContent = "Delete";
+    btn.className = "delete-btn";
+    btn.addEventListener("click", () => { 
+      saveCheckins(loadCheckins().filter(x => x.id !== s.id));
+      showProgressList();
+    });
+    li.append(btn);
+  }
+  return li;
 }
+
 
 
