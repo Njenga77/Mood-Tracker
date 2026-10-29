@@ -73,11 +73,13 @@ function setupCheckinForm() {
 
   form.addEventListener("submit", (e) => {
     e.preventDefault(); 
+
+    const mood = form.elements.mood.value.trim();
+    const date = form.elements.date.value;
+    const sleep = Number(form.elements.sleep.value);
+    const comfort = Number(form.elements.comfort.value);
   }
 }
-  
-   
-  
     
     
 
