@@ -114,5 +114,8 @@ function showProgressList() {
   moods.forEach(name => filter.append(new Option(name, name)));
   filter.value = moods.includes(chosen) ? chosen : "";
 
-  
+  ul.textContent = "";
+  const shown = list.filter(s => !filter.value || s.mood === filter.value).reverse();
+  if (shown.length === 0) ul.append(emptyItem());
+  shown.forEach(s => ul.append(makeItem(s, true)));
 }
