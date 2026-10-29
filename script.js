@@ -108,7 +108,11 @@ function showProgressList() {
   const ul = document.getElementById("all");
   const chosen = filter.value;
   
-
+  const moods = [...new Set(list.map(checkin => checkin.mood))];
+  filter.textContent = "";
+  filter.append(new Option("All moods", ""));
+  moods.forEach(name => filter.append(new Option(name, name)));
+  filter.value = moods.includes(chosen) ? chosen : "";
 
   
 }
