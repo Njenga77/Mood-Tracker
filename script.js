@@ -101,3 +101,14 @@ function setupCheckinForm() {
     msg.textContent = "Check-in saved gently. Thank you for taking time for yourself — see it on the History page.";
   });
 }
+
+function showProgressList() {
+  const list = loadCheckins();
+  const filter = document.getElementById("filter");
+  const ul = document.getElementById("all");
+  const chosen = filter.value;
+  
+
+
+  
+}
