@@ -85,7 +85,10 @@ function setupCheckinForm() {
     if (!date || date > today) errors.push("Choose today or an earlier date.");
     if (!Number.isInteger(sleep) || sleep < 1 || sleep > 24) errors.push("Hours of sleep must be a whole number from 1 to 24.");
     if (!comfort) errors.push("Choose a peace of mind level.");
-  }
-}
-    
+
+    if (errors.length) {
+      msg.className = "error";
+      msg.textContent = errors.join(" ");
+      return; 
+    }
 
