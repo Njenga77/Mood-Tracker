@@ -1,4 +1,5 @@
-:root {
+/* Colours and fonts are set once here so every page looks the same */
+:root {             
   --paper: #eff5f2; 
   --card: #fbfcfa; 
   --ink: #233b36; 
@@ -218,6 +219,7 @@ button.delete-btn {
     color: var(--good); 
 }
 
+/* ===== Tablet/Phones ===== */
 @media (min-width: 600px) {
   header { 
     flex-direction: row; 
