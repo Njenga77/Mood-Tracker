@@ -70,7 +70,13 @@ function setupCheckinForm() {
   const msg = document.getElementById("message");
   const today = new Date().toISOString().split("T")[0];
   form.elements.date.value = today;
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault(); 
+  }
 }
+  
+   
   
     
     
