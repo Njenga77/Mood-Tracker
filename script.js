@@ -45,3 +45,9 @@ function buildEmptyMessage() {
   return li;
 }
 
+function showHomeSummary() {
+  const list = loadCheckins();
+  const stats = document.getElementById("stats");
+  const recent = document.getElementById("recent");
+
+  
