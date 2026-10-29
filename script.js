@@ -119,3 +119,11 @@ function showProgressList() {
   if (shown.length === 0) ul.append(emptyItem());
   shown.forEach(s => ul.append(makeItem(s, true)));
 }
+
+const page = document.body.dataset.page;
+if (page === "home") showHomeSummary();
+if (page === "checkin") setupCheckinForm();
+if (page === "progress") {
+  document.getElementById("filter").addEventListener("change", showProgressList);
+  showProgressList();
+}
