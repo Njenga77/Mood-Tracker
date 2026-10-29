@@ -61,4 +61,6 @@ function showHomeSummary() {
       box.append(num, label);
       stats.append(box);
     });
+  if (list.length === 0) recent.append(buildEmptyMessage());
+  list.slice(-3).reverse().forEach(checkin => recent.append(buildCheckinCard(checkin, false)));
 }
